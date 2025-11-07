@@ -1,8 +1,7 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import TrekGrid from './components/TrekGrid';
-import Testimonials from './components/Testimonials';
-import CTA from './components/CTA';
+import StayWidget from './components/StayWidget';
+import Chatbot from './components/Chatbot';
 
 function App() {
   return (
@@ -10,9 +9,7 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <TrekGrid />
-        <Testimonials />
-        <CTA />
+        <StayWidget />
 
         <section id="about" className="py-16 border-t border-white/10">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -38,6 +35,9 @@ function App() {
             </form>
           </div>
         </section>
+
+        {/* Anchor target for hero button */}
+        <div id="chatbot" className="sr-only" />
       </main>
 
       <footer className="border-t border-white/10 py-8 text-sm text-neutral-300">
@@ -45,12 +45,13 @@ function App() {
           <p>© {new Date().getFullYear()} TrekQuest. All rights reserved.</p>
           <nav className="flex items-center gap-6">
             <a href="#about" className="hover:text-white">About</a>
-            <a href="#treks" className="hover:text-white">Treks</a>
-            <a href="#reviews" className="hover:text-white">Reviews</a>
             <a href="#contact" className="hover:text-white">Contact</a>
           </nav>
         </div>
       </footer>
+
+      {/* Floating chatbot */}
+      <Chatbot />
     </div>
   );
 }
