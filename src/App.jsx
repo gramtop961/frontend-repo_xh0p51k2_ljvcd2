@@ -1,28 +1,58 @@
-import { useState } from 'react'
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import TrekGrid from './components/TrekGrid';
+import Testimonials from './components/Testimonials';
+import CTA from './components/CTA';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-neutral-950 text-white">
+      <Navbar />
+      <main>
+        <Hero />
+        <TrekGrid />
+        <Testimonials />
+        <CTA />
+
+        <section id="about" className="py-16 border-t border-white/10">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl md:text-3xl font-semibold">About TrekQuest</h2>
+            <p className="mt-4 max-w-3xl text-neutral-300">
+              We craft memorable mountain experiences with detailed day-wise itineraries and curated stays—camps, lodges, and boutique hotels. Plan with confidence using availability calendars, maps, and trusted reviews.
+            </p>
+          </div>
+        </section>
+
+        <section id="contact" className="py-16 border-t border-white/10">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl md:text-3xl font-semibold">Contact us</h2>
+            <p className="mt-2 text-neutral-300">Have questions? Send us a message and we’ll get back within a day.</p>
+            <form className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+              <input type="text" placeholder="Your name" className="w-full rounded-md bg-neutral-900 border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-400" />
+              <input type="email" placeholder="Email address" className="w-full rounded-md bg-neutral-900 border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-400" />
+              <input type="text" placeholder="Subject" className="md:col-span-2 w-full rounded-md bg-neutral-900 border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-400" />
+              <textarea placeholder="Your message" rows="5" className="md:col-span-2 w-full rounded-md bg-neutral-900 border border-white/10 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-400" />
+              <div className="md:col-span-2">
+                <button type="button" className="rounded-md bg-white text-neutral-900 px-5 py-3 font-medium hover:bg-neutral-100">Send message</button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer className="border-t border-white/10 py-8 text-sm text-neutral-300">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p>© {new Date().getFullYear()} TrekQuest. All rights reserved.</p>
+          <nav className="flex items-center gap-6">
+            <a href="#about" className="hover:text-white">About</a>
+            <a href="#treks" className="hover:text-white">Treks</a>
+            <a href="#reviews" className="hover:text-white">Reviews</a>
+            <a href="#contact" className="hover:text-white">Contact</a>
+          </nav>
         </div>
-      </div>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
